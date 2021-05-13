@@ -1,0 +1,4 @@
+REPOSITORY                      TAG                 IMAGE ID            CREATED             SIZE
+mskomorokhova/ubuntu-tmp-file   latest              14915d8a0492        6 seconds ago       63.1MB
+ubuntu                          18.04               4eb8f7c43909        2 weeks ago         63.1MB
+hello-world                     latest              d1165f221234        2 months ago        13.3kB
