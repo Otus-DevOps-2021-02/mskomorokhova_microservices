@@ -1,2 +1,4 @@
 # mskomorokhova_microservices
 mskomorokhova microservices repository
+
+Инициализация репо
