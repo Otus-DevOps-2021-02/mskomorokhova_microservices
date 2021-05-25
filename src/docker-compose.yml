@@ -25,10 +25,8 @@ services:
     networks:
       - reddit_front
       - reddit_back
-
 volumes:
   post_db:
-
 networks:
   reddit_front:
   reddit_back:
