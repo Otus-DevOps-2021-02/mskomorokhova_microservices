@@ -1,1 +1,9 @@
+build_info.txt
+
+## python specific
+*.pyc
 .env
+.env.save
+*/tls.crt
+tls.crt
+tls.key
