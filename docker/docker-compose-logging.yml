@@ -1,7 +1,18 @@
 version: '3'
 services:
+  zipkin:
+    image: openzipkin/zipkin:2.21.0
+    ports:
+      - "9411:9411"
+    networks:
+      back_net:
+        ipv4_address: 10.0.2.11
+      front_net:
+        ipv4_address: 10.0.1.11
+ 
+
   fluentd:
-    image: ${USER_NAME}/fluentd
+    image: ${USERNAME}/fluentd
     ports:
       - "24224:24224"
       - "24224:24224/udp"
@@ -23,14 +34,16 @@ services:
     ports:
       - "5601:5601"
 
-  zipkin:
-    image: openzipkin/zipkin:2.21.0
-    ports:
-      - "9411:9411"
-    networks:
-      - reddit_front
-      - reddit_back
-
 networks:
-  reddit_front:
-  reddit_back:
+  back_net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: ${BACKNET}
+  front_net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: ${FRONTNET}
